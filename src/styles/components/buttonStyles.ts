@@ -4,11 +4,11 @@ export const ButtonStyles = {
   variants: {
     primaryButton: {
       borderRadius: "0.5rem",
-      border: "1px solid red",
-      bg: "yellow",
+      bg: "#0057CC",
+      color:"white",
       margin: "0.25rem ",
       _hover: {
-        bg: "blue",
+        bg: "#a7c5f9",
       },
     },
   },

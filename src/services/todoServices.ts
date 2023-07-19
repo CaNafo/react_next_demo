@@ -5,5 +5,5 @@ export const getTodoList = async () => {
     `todos`
   );
 
-  return res.data;
+  return res.data["todos"];
 };

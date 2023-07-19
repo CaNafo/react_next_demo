@@ -1,2 +1,2 @@
 
-export const API_URL = "https://praksa.free.beeceptor.com/";
+export const API_URL = "https://dummyjson.com/";

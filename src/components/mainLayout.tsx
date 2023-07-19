@@ -1,5 +1,7 @@
 import { Box } from "@chakra-ui/react"
 
+import BgImage from "../assets/bg-images/bg.png"
+
 interface LayoutParams {
     children: any;
     pageTitle: string;
@@ -7,7 +9,7 @@ interface LayoutParams {
 
 
 const MainLayout = ({ children, pageTitle }: LayoutParams) => {
-    return <Box bg="lightblue" p="0.5rem">
+    return <Box bgImage={BgImage.src} p="0.5rem" height='100vh' overflow='scroll'>
         <Box w='100%' textAlign="center" bg='transparent' textStyle='titleBold'>{pageTitle}</Box>
         {children}
     </Box>

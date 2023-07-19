@@ -14,12 +14,12 @@ export const theme = extendTheme({
     },
     colors: {
         dark: "#000000",
-        primary: "#ff5553",
+        primary: "#13064d",
     },
     textStyles: {
         titleBold: {
             fontFamily: "Poppins",
-            color: "darkGrey",
+            color: "primary",
             fontSize: ["1rem", "1.5rem", "1.8rem", "2rem"],
             fontWeight: "600",
         }, 
