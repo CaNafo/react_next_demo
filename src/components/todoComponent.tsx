@@ -1,12 +1,17 @@
-import { Box } from "@chakra-ui/react"
+import { Box, Checkbox, Flex, Tooltip } from "@chakra-ui/react"
 
 
 import { ITodo } from "interfaces/todoInterface";
-import { FC } from "react";
+import { FC, useContext, useEffect, useState } from "react";
+import { Context as ApiContext } from "context/ApiContext";
 
 const TodoComponent : FC<ITodo> = (props) =>{
+    const {state,setSelectedTasks} = useContext(ApiContext);
+    const [todoDisplayedOnDetails,setTodoDisplayedOnDetails]=useState(false)    
+    var selectedTasks:ITodo[]=state.selectedTasks;
+    const {todo,completed,id} = props;
 
-    const {todo,completed} = props;
+    useEffect(()=>{setTodoDisplayedOnDetails(selectedTasks.find((el)=>el.id===id)!==undefined)},[selectedTasks,id])
 
     return <Box 
                 bg={completed?"green":"gray"} 
@@ -16,8 +21,26 @@ const TodoComponent : FC<ITodo> = (props) =>{
                 borderRadius="0.5rem"
                 maxW="50vw"
                 boxShadow='xl'
+            
                 >
-            {todo}
+           <Flex justifyContent='space-between'>{todo} <Tooltip hasArrow label="home.displayOnDetailsPage"><Checkbox isChecked={
+                todoDisplayedOnDetails
+           } 
+           onChange={(_)=>{
+            if(!todoDisplayedOnDetails){
+                setTodoDisplayedOnDetails(true);
+                selectedTasks.push({
+                    todo:todo,
+                    completed:completed,
+                    id:id
+                })
+            }else{
+                setTodoDisplayedOnDetails(false);
+                selectedTasks = selectedTasks.filter((el)=>{ 
+                    return el.id!==id})
+                setSelectedTasks(selectedTasks)
+            }
+           }}/></Tooltip></Flex> 
         </Box>
 }
 
