@@ -15,6 +15,7 @@ export const theme = extendTheme({
     colors: {
         dark: "#000000",
         primary: "#13064d",
+        navPrimary: "rgba(71, 85, 118, 0.81)",
     },
     textStyles: {
         titleBold: {
