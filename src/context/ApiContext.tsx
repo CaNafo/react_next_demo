@@ -1,7 +1,12 @@
 import createApiContext from "./createApiContext";
 
 import { ITodo } from "interfaces/todoInterface";
-const apiReducer = (state: any, action: any, params: any) => {
+
+export type IState = {
+  selectedTasks : ITodo[]
+}
+
+const apiReducer = (state: IState, action: any, params: any) => {
   switch (action.type) {
 
     case "setSelectedTasks" :{

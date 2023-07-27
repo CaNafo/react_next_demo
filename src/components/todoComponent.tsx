@@ -11,6 +11,8 @@ const TodoComponent : FC<ITodo> = (props) =>{
     var selectedTasks:ITodo[]=state.selectedTasks;
     const {todo,completed,id} = props;
 
+
+
     useEffect(()=>{setTodoDisplayedOnDetails(selectedTasks.find((el)=>el.id===id)!==undefined)},[selectedTasks,id])
 
     return <Box 

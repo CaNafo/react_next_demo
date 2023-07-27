@@ -5,6 +5,7 @@ import routes from "routes";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Url } from "next/dist/shared/lib/router/router";
+import { useTranslation } from "react-i18next";
 
 interface LayoutParams {
     children: any;
@@ -14,6 +15,7 @@ interface LayoutParams {
 
 const MainLayout = ({ children, pageTitle }: LayoutParams) => {
     const {asPath,push} = useRouter();
+    const {t} = useTranslation();
     return <Box bgImage={BgImage.src} p="0.5rem" height='100vh' overflow='scroll'>
                 <Box w='100%' textAlign="center" bg='transparent' textStyle='titleBold'>{pageTitle}</Box>
                 <Flex>
@@ -28,7 +30,7 @@ const MainLayout = ({ children, pageTitle }: LayoutParams) => {
                             _hover={{
                                 cursor:'pointer',
                                 color:"lightblue"
-                            }}>{route.name}</Box>
+                            }}>{t(route.name.toString())}</Box>
                          </Link>)
                         }
                     </Box>

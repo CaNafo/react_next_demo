@@ -15,11 +15,11 @@ export enum AppRoutes{
 const routes : RouteAttributesInterface[] = [
     {
         path : AppRoutes.home,
-        name: "appRoutes.Home"
+        name: "appRoutes.home"
     },
     {
         path : AppRoutes.details,
-        name: "appRoutes.Details"
+        name: "appRoutes.details"
     }
 ]
 

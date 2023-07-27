@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Provider as AppProvider } from "../context/ApiContext";
 
+import "../localization/i18n";
+
 import Head from "next/head";
 import { theme } from "styles/theme";
 
