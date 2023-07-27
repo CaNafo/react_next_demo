@@ -7,7 +7,7 @@ interface RouteAttributesInterface{
 export enum AppRoutes{
     home="/",
     details="/details",
-    secondDetailsPage="/detailsPageTwo",
+    secondDetailsPage="/details/detailsPageTwo",
     extraDetailsPage="/details/details-sub-page/index",
 }
 
@@ -20,6 +20,10 @@ const routes : RouteAttributesInterface[] = [
     {
         path : AppRoutes.details,
         name: "appRoutes.details"
+    },
+    {
+        path : AppRoutes.secondDetailsPage,
+        name: "appRoutes.newTodo"
     }
 ]
 

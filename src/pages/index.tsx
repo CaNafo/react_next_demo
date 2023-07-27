@@ -7,10 +7,12 @@ import { getTodoList } from "services/todoServices";
 import { useState } from "react";
 import { ITodo } from "interfaces/todoInterface";
 import TodoComponent from "components/todoComponent";
+import { useTranslation } from "react-i18next";
 
 
 const Home: NextPage = () => {
 
+  const {t} = useTranslation();
   const [todoList, setTodoList] = useState<ITodo[]>([]);
 
   const { status: todoStatus, refetch: refetchTodos } = useQuery("todoList", getTodoList, {
@@ -23,7 +25,7 @@ const Home: NextPage = () => {
     }
   })
 
-  return <MainLayout pageTitle="Home Page">
+  return <MainLayout pageTitle={t("pageTitles.homePage")}>
     {todoStatus === "success" && todoList.map((e,index) => <TodoComponent key={index} id={e.id} todo={e.todo} completed={e.completed} />)}
     <Box h="4rem"/>
     <Flex justifyContent='center' pos='absolute' bottom='1rem' left='0rem' right='0rem'>

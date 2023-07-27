@@ -1,7 +1,13 @@
 const LOCALES_EN={
     appRoutes:{
         home: "Home",
-        details: "Details"
+        details: "Details",
+        newTodo: "New Todo"
+    },
+    pageTitles:{
+        homePage:"Home Page",
+        detailsPage:"Details Page",
+        newTodoPage:"New Todo",
     }
 }
 
